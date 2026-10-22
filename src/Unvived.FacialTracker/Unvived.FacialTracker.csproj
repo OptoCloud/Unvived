@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>Unvived.FacialTracker</RootNamespace>
+    <AssemblyName>Unvived.FacialTracker</AssemblyName>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <!-- VRCFaceTracking install to compile against (override with -p:VrcftPath=...) -->
+    <VrcftPath Condition="'$(VrcftPath)' == ''">C:\Program Files (x86)\Steam\steamapps\common\VRCFaceTracking</VrcftPath>
+  </PropertyGroup>
+
+  <!-- Core is compiled into this assembly: VRCFT's module host does not
+       resolve other DLLs next to the module. -->
+  <ItemGroup>
+    <Compile Include="..\Unvived.Core\**\*.cs"
+             Exclude="..\Unvived.Core\bin\**;..\Unvived.Core\obj\**"
+             LinkBase="Core" />
+  </ItemGroup>
+
+  <!-- Provided by VRCFaceTracking at run time: never copied into the module. -->
+  <ItemGroup>
+    <Reference Include="VRCFaceTracking.Core" HintPath="$(VrcftPath)\VRCFaceTracking.Core.dll" Private="false" />
+    <Reference Include="VRCFaceTracking.SDK" HintPath="$(VrcftPath)\VRCFaceTracking.SDK.dll" Private="false" />
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions" HintPath="$(VrcftPath)\Microsoft.Extensions.Logging.Abstractions.dll" Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="module.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

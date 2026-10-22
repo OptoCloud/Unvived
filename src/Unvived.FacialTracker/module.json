@@ -1,0 +1,11 @@
+{
+  "ModuleId": "2feb81fd-dab0-4845-86e3-57e93d78fad1",
+  "ModuleName": "Unvived: VIVE Facial Tracker",
+  "AuthorName": "OptoCloud",
+  "ModuleDescription": "Runs the VIVE Facial Tracker without any VIVE software: direct camera access and SRanipal's own lip model on the GPU.",
+  "UsageInstructions": "Needs lip_opencl.params once (see the project's docs/model-sources.md). It is kept in %LOCALAPPDATA%\\Unvived\\models, so reinstalling the module does not lose it. Quit SRanipal if it is still installed.",
+  "Version": "0.2.0",
+  "ModulePageUrl": "https://github.com/OptoCloud",
+  "IsLocal": true,
+  "DllFileName": "Unvived.FacialTracker.dll"
+}

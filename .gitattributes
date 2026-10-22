@@ -1,0 +1,41 @@
+# Text: normalised to LF in the repository, native line endings on checkout.
+* text=auto
+
+# Windows-only formats keep CRLF in the working tree.
+*.sln     text eol=crlf
+*.ps1     text eol=crlf
+*.psm1    text eol=crlf
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+
+# Diff C# and Python as code.
+*.cs      text diff=csharp
+*.py      text diff=python
+
+# Binary files go through Git LFS, never into plain history.
+# (HTC/Tobii binaries and models are ignored entirely; see .gitignore.)
+*.dll     filter=lfs diff=lfs merge=lfs -text
+*.exe     filter=lfs diff=lfs merge=lfs -text
+*.pdb     filter=lfs diff=lfs merge=lfs -text
+*.so      filter=lfs diff=lfs merge=lfs -text
+*.lib     filter=lfs diff=lfs merge=lfs -text
+*.bin     filter=lfs diff=lfs merge=lfs -text
+*.onnx    filter=lfs diff=lfs merge=lfs -text
+*.pt      filter=lfs diff=lfs merge=lfs -text
+*.npy     filter=lfs diff=lfs merge=lfs -text
+*.npz     filter=lfs diff=lfs merge=lfs -text
+*.pgm     filter=lfs diff=lfs merge=lfs -text
+*.png     filter=lfs diff=lfs merge=lfs -text
+*.jpg     filter=lfs diff=lfs merge=lfs -text
+*.jpeg    filter=lfs diff=lfs merge=lfs -text
+*.gif     filter=lfs diff=lfs merge=lfs -text
+*.bmp     filter=lfs diff=lfs merge=lfs -text
+*.webp    filter=lfs diff=lfs merge=lfs -text
+*.mp4     filter=lfs diff=lfs merge=lfs -text
+*.avi     filter=lfs diff=lfs merge=lfs -text
+*.pcap    filter=lfs diff=lfs merge=lfs -text
+*.pcapng  filter=lfs diff=lfs merge=lfs -text
+*.zip     filter=lfs diff=lfs merge=lfs -text
+*.7z      filter=lfs diff=lfs merge=lfs -text
+*.gz      filter=lfs diff=lfs merge=lfs -text
+*.pdf     filter=lfs diff=lfs merge=lfs -text

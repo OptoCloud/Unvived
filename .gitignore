@@ -1,0 +1,55 @@
+# --- HTC / Tobii material: studied locally, never committed -----------------
+# Binaries, firmware and models (re-create with scripts/inventory.ps1)
+vendor/
+# Ghidra projects, decompiler output, captures and other raw RE material
+ghidra_project*/
+dumps/
+captures/
+archive/
+# Weights or installers dropped anywhere else in the tree
+*.params
+*.msi
+*.cab
+# Test fixtures derived from HTC's weights
+tests/fixtures/local/
+
+# --- .NET build output -------------------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ll]og/
+publish/
+artifacts/
+TestResults/
+*.nupkg
+*.snupkg
+.dotnet/
+.nuget/
+
+# --- Other build output and logs --------------------------------------------
+build/
+build-*/
+logs/
+*.log
+
+# --- Python -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# --- Editors and per-machine settings -----------------------------------------
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+.claude/settings.local.json
